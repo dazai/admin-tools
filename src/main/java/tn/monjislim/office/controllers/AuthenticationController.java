@@ -47,8 +47,8 @@ public class AuthenticationController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<?> signup(@RequestBody AuthenticationRequest authenticationRequest){
-        if (iUserDao.existsByName(authenticationRequest.getUserName())){
+    public ResponseEntity<?> signup(@RequestBody AuthenticationRequest authenticationRequest) {
+        if (iUserDao.existsByName(authenticationRequest.getUserName())) {
             throw new BadRequestException("User name already in use");
         }
 
